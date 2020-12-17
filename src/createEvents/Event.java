@@ -5,7 +5,7 @@ public class Event {
     String description;
     Solution[] solutions;
 
-    public Event(Type type, String description, Solution s1, Solution s2, Solution s3){
+    public Event(Type type, String description, Solution s1, Solution s2, Solution s3) {
         this.type = type;
         this.description = description;
         solutions = new Solution[3];
