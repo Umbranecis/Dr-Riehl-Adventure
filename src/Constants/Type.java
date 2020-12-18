@@ -1,4 +1,4 @@
-package createEvents;
+package Constants;
 
 public enum Type {
     EXPERIMENT,

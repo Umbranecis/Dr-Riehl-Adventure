@@ -1,5 +1,7 @@
 package createEvents;
 
+import Constants.Type;
+
 public class Event {
     Type type;
     String description;
