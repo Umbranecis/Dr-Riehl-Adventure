@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Output.Controller">
+   <children>
+      <AnchorPane prefHeight="900.0" prefWidth="700.0">
+         <children>
+            <ImageView fitHeight="69.0" fitWidth="584.0" layoutX="49.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="15.0">
+               </ImageView>
+            <Text fx:id="question" layoutX="48.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frage1" wrappingWidth="596.4775085449219" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <ImageView fx:id="image" fitHeight="336.0" fitWidth="608.0" layoutX="47.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="219.0">
+
+            </ImageView>
+            <VBox layoutX="51.0" layoutY="591.0" prefHeight="278.0" prefWidth="600.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="591.0">
+               <children>
+                  <HBox onMouseClicked="#clickedA" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Label text="A:">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="25.0" />
+                           </HBox.margin>
+                        </Label>
+                        <StackPane fx:id="answerA" prefHeight="70.0" prefWidth="571.0" style="-fx-background-color: green;">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Antwort 1" wrappingWidth="567.0967712402344" />
+                           </children>
+                        </StackPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox onMouseClicked="#clickedB" prefHeight="70.0" prefWidth="599.0">
+                     <children>
+                        <Label text="B:">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="25.0" />
+                           </HBox.margin>
+                        </Label>
+                        <StackPane prefHeight="70.0" prefWidth="568.0" style="-fx-background-color: red;">
+                           <children>
+                              <Text fx:id="answerB" strokeType="OUTSIDE" strokeWidth="0.0" text="Antwort 2" wrappingWidth="571.9935607910156" />
+                           </children>
+                        </StackPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox onMouseClicked="#clickedC" prefHeight="70.0" prefWidth="590.0">
+                     <children>
+                        <Label text="C:">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="25.0" />
+                           </HBox.margin>
+                        </Label>
+                        <StackPane prefHeight="70.0" prefWidth="559.0" style="-fx-background-color: red;">
+                           <children>
+                              <Text fx:id="answerC" strokeType="OUTSIDE" strokeWidth="0.0" text="Antwort 3" wrappingWidth="571.2027893066406" />
+                           </children>
+                        </StackPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
