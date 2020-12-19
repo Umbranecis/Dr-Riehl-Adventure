@@ -5,11 +5,14 @@ import javafx.application.Application;
         import javafx.scene.Scene;
         import javafx.stage.Stage;
 
+import java.util.Objects;
+import Output.*;
+
 public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("meister.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("meister.fxml")));
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 700, 900));
         primaryStage.show();
