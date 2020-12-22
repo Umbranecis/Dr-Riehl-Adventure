@@ -16,16 +16,4 @@ public class Event {
         solutions[2] = s3;
     }
 
-    public Type getType() {
-        return type;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public Solution[] getSolutions(){
-        return solutions;
-
-    }
 }
