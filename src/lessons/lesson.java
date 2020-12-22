@@ -1,22 +1,24 @@
 package lessons;
 
+import Constants.*;
 import createEvents.*;
-import Output.*;
+//import Output.*;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
-public class lesson<Themaa> {
+public class lesson {
     private int counting;
     private String eventText;
     private String answerOne;
     private String answerTwo;
     private String answerThree;
     private ArrayList<Event> aLE;
+    private Type type;
+    private Solution[] s;
 //Start-Methode
     public lesson(){
 
-        counting =0;
+        //pullEvents(Topic);
         prepForGUI(counting);
     }
 
@@ -53,22 +55,37 @@ public class lesson<Themaa> {
         this.answerThree = answerThree;
     }
 
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
 //eigene Methoden zum selbst benutzen in der Klasse
-    private void pullEvents (String thema){
-
-        //von Nils ArrayList pullen und speichern
-
+    private void pullEvents (Topic t){
+        aLE=pushEvents.getEvents((Topic) t);
+        prepForGUI(0);
     }
 
     private void prepForGUI(int counting){
 
         Event e = aLE.get(counting);
-        //Attribute werden für GUI vorbereitet
+        setType(e.getType());
+        setEventText(e.getDescription());
+        s=e.getSolutions();
+        setAnswerOne((String) s[0].getDescription());
+        setAnswerTwo((String) s[1].getDescription());
+        setAnswerThree((String) s[2].getDescription());
+        counting++;
+    }
+    public void buttonPressed(int a){
+
+        int knowledge = s[a].getKnowledge();
+        int satisfaction = s[a].getSatisfaction();
+        //Punktzahl in Oberklasse erhöhen aus Werten der Antwort
+
     }
 
-    public ArrayList<String> getEventTexts()
-    {
-        //update der Attribute
-        return new ArrayList();
-    }
 }
