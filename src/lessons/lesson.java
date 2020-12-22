@@ -82,8 +82,8 @@ public class lesson {
     }
     public void buttonPressed(int a){
 
-        int knowledge = s[a].getKnowledge();
-        int satisfaction = s[a].getSatisfaction();
+        int knowledge = s[a].getChangeKnowledge();
+        int satisfaction = s[a].getChangeSatisfaction();
         //Punktzahl in Oberklasse erhöhen aus Werten der Antwort
 
     }
