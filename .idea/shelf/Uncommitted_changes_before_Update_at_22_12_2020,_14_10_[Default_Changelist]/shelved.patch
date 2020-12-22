@@ -1,0 +1,74 @@
+Index: Dr Riehl Adventure.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<module type=\"JAVA_MODULE\" version=\"4\">\n  <component name=\"NewModuleRootManager\" inherit-compiler-output=\"true\">\n    <exclude-output />\n    <content url=\"file://$MODULE_DIR$\">\n      <sourceFolder url=\"file://$MODULE_DIR$/src\" isTestSource=\"false\" />\n    </content>\n    <orderEntry type=\"jdk\" jdkName=\"1.8\" jdkType=\"JavaSDK\" />\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\n  </component>\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Dr Riehl Adventure.iml b/Dr Riehl Adventure.iml
+--- a/Dr Riehl Adventure.iml	(revision 1516f49f994337562e9e6a8bf81394b41643c14f)
++++ b/Dr Riehl Adventure.iml	(date 1608556985507)
+@@ -7,5 +7,6 @@
+     </content>
+     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" name="javafx-swt" level="project" />
+   </component>
+ </module>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_13\" default=\"true\" project-jdk-name=\"13\" project-jdk-type=\"JavaSDK\">\n    <output url=\"file://$PROJECT_DIR$/out\" />\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 1516f49f994337562e9e6a8bf81394b41643c14f)
++++ b/.idea/misc.xml	(date 1608386148046)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_13" default="true" project-jdk-name="13" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+new file mode 100644
+--- /dev/null	(date 1608556449905)
++++ b/.idea/compiler.xml	(date 1608556449905)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="CompilerConfiguration">
++    <bytecodeTargetLevel target="13">
++      <module name="Dr Riehl Adventure" target="" />
++    </bytecodeTargetLevel>
++  </component>
++</project>
+\ No newline at end of file
+Index: src/lessons/lesson.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package lessons;\n\nimport createEvents.*;\nimport Output.*;\n\nimport java.lang.reflect.Array;\nimport java.util.*;\n\npublic class lesson<Themaa> {\n    private int counting;\n    private String eventText;\n    private String answerOne;\n    private String answerTwo;\n    private String answerThree;\n    private ArrayList<Event> aLE;\n//Start-Methode\n    public lesson(){\n\n        counting =0;\n        prepForGUI(counting);\n    }\n\n//schön aussehende getter- und setter-Methoden\n    public String getEventText() {\n        return eventText;\n    }\n\n    public void setEventText(String eventText) {\n        this.eventText = eventText;\n    }\n\n    public String getAnswerOne() {\n        return answerOne;\n    }\n\n    public void setAnswerOne(String answerOne) {\n        this.answerOne = answerOne;\n    }\n\n    public String getAnswerTwo() {\n        return answerTwo;\n    }\n\n    public void setAnswerTwo(String answerTwo) {\n        this.answerTwo = answerTwo;\n    }\n\n    public String getAnswerThree() {\n        return answerThree;\n    }\n\n    public void setAnswerThree(String answerThree) {\n        this.answerThree = answerThree;\n    }\n\n//eigene Methoden zum selbst benutzen in der Klasse\n    private void pullEvents (String thema){\n\n        //von Nils ArrayList pullen und speichern\n\n    }\n\n    private void prepForGUI(int counting){\n\n        Event e = aLE.get(counting);\n        //Attribute werden für GUI vorbereitet\n    }\n\n    public ArrayList<String> getEventTexts()\n    {\n        //update der Attribute\n        return new ArrayList();\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/lessons/lesson.java b/src/lessons/lesson.java
+--- a/src/lessons/lesson.java	(revision 1516f49f994337562e9e6a8bf81394b41643c14f)
++++ b/src/lessons/lesson.java	(date 1608301070060)
+@@ -1,7 +1,6 @@
+ package lessons;
+ 
+ import createEvents.*;
+-import Output.*;
+ 
+ import java.lang.reflect.Array;
+ import java.util.*;
