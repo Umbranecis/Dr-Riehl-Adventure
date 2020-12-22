@@ -1,52 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Output.Controller">
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Output.Controller">
    <children>
-      <AnchorPane prefHeight="900.0" prefWidth="700.0">
+      <AnchorPane prefHeight="900.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <ImageView fitHeight="69.0" fitWidth="584.0" layoutX="49.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="15.0">
+            <ImageView fitHeight="86.0" fitWidth="596.0" layoutX="46.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="20.0">
                <image>
-                  <Image url="@../../../test2/src/images/meister-riehls-lehrjahre.png" />
+                  <Image url="file:/Users/Jessmann/IdeaProjects/test2/images/mrl4.png" />
                </image>
             </ImageView>
-            <Text fx:id="question" layoutX="48.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frage1" wrappingWidth="596.4775085449219" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Text>
-            <ImageView fx:id="image" fitHeight="336.0" fitWidth="608.0" layoutX="47.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="219.0">
-
+            <VBox layoutX="50.0" layoutY="118.0" prefHeight="68.0" prefWidth="600.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="118.0">
+               <children>
+                  <Text fx:id="question" boundsType="LOGICAL_VERTICAL_CENTER" strokeType="OUTSIDE" strokeWidth="0.0" text="Sind 2 Kühe im Keller und hacken Heizöl, kommt ein Schraubenzieher die eine Tür rein,antwortet die darauf:ja, der grüßt nie." textOrigin="CENTER" wrappingWidth="597.703369140625">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <ImageView fx:id="image" fitHeight="336.0" fitWidth="608.0" layoutX="49.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="215.0">
+               <image>
+                  <Image fx:id="roundEdges" url="file:/Users/Jessmann/IdeaProjects/test2/images/herrRiehlusBornLegend.jpg" />
+               </image>
             </ImageView>
             <VBox layoutX="51.0" layoutY="591.0" prefHeight="278.0" prefWidth="600.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="591.0">
                <children>
-                  <HBox onMouseClicked="#clickedA" prefHeight="70.0" prefWidth="200.0">
+                  <HBox fx:id="bgA" onMouseClicked="#clickedA" prefHeight="70.0" prefWidth="200.0">
                      <children>
-                        <Label text="A:">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                           <padding>
-                              <Insets right="10.0" />
-                           </padding>
-                           <HBox.margin>
-                              <Insets top="25.0" />
-                           </HBox.margin>
-                        </Label>
-                        <StackPane fx:id="answerA" prefHeight="70.0" prefWidth="571.0" style="-fx-background-color: green;">
+                        <StackPane fx:id="bgA1" prefHeight="70.0" prefWidth="571.0">
                            <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Antwort 1" wrappingWidth="567.0967712402344" />
+                              <Text fx:id="answerA" strokeType="OUTSIDE" strokeWidth="0.0" text="Antwort 1" wrappingWidth="567.0967712402344">
+                                 <StackPane.margin>
+                                    <Insets left="20.0" />
+                                 </StackPane.margin>
+                              </Text>
                            </children>
                         </StackPane>
                      </children>
@@ -54,22 +51,15 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox onMouseClicked="#clickedB" prefHeight="70.0" prefWidth="599.0">
+                  <HBox fx:id="bgB" onMouseClicked="#clickedB" prefHeight="70.0" prefWidth="599.0">
                      <children>
-                        <Label text="B:">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                           <padding>
-                              <Insets right="10.0" />
-                           </padding>
-                           <HBox.margin>
-                              <Insets top="25.0" />
-                           </HBox.margin>
-                        </Label>
-                        <StackPane prefHeight="70.0" prefWidth="568.0" style="-fx-background-color: red;">
+                        <StackPane prefHeight="70.0" prefWidth="568.0">
                            <children>
-                              <Text fx:id="answerB" strokeType="OUTSIDE" strokeWidth="0.0" text="Antwort 2" wrappingWidth="571.9935607910156" />
+                              <Text fx:id="answerB" strokeType="OUTSIDE" strokeWidth="0.0" text="Antwort 2" wrappingWidth="571.9935607910156">
+                                 <StackPane.margin>
+                                    <Insets left="20.0" />
+                                 </StackPane.margin>
+                              </Text>
                            </children>
                         </StackPane>
                      </children>
@@ -77,23 +67,15 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox onMouseClicked="#clickedC" prefHeight="70.0" prefWidth="590.0">
+                  <HBox fx:id="bgC" onMouseClicked="#clickedC" prefHeight="70.0" prefWidth="590.0">
                      <children>
-                        <Label text="C:">
-                           <font>
-                              <Font size="17.0" />
-                           </font>
-                           <padding>
-                              <Insets right="10.0" />
-                           </padding>
-                           <HBox.margin>
-                              <Insets top="25.0" />
-                           </HBox.margin>
-                        </Label>
-                        <StackPane prefHeight="70.0" prefWidth="559.0" style="-fx-background-color: red;">
+                        <StackPane prefHeight="70.0" prefWidth="559.0">
                            <children>
                               <Text fx:id="answerC" strokeType="OUTSIDE" strokeWidth="0.0" text="Antwort 3" wrappingWidth="571.2027893066406" />
                            </children>
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
                         </StackPane>
                      </children>
                      <VBox.margin>
@@ -105,4 +87,4 @@
          </children>
       </AnchorPane>
    </children>
-</Pane>
+</AnchorPane>
