@@ -4,6 +4,31 @@ import Constants.Type;
 
 public class Event {
     Type type;
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Solution[] getSolutions() {
+        return solutions;
+    }
+
+    public void setSolutions(Solution[] solutions) {
+        this.solutions = solutions;
+    }
+
     String description;
     Solution[] solutions;
 
