@@ -8,17 +8,17 @@ import java.util.Scanner;
 
 public abstract class ImageManager {
     //Ordner der Bilder
-    static String imagePath = "/images";
+    static String imagePath = "images";
     // Datei für die Verwaltung
-    static String connectionPath = "/images/ImageConections";
-    static HashMap<String, String> images = new HashMap<String, String>();
+    static String connectionPath = "src/images/ImageConections";
+    public static HashMap<String, String> images = new HashMap<String, String>();
 
     public static String getImagePath(Event e){
         fillMap();
         return images.get(e.convertToString());
     }
 
-    static void fillMap(){
+    public static void fillMap(){
         Scanner imageConnections = null;
         Topic currentTopic = null;
         try {
@@ -34,7 +34,7 @@ public abstract class ImageManager {
             }
             else{
             String[] split = s.split(":");
-            images.put(pushEvents.getFromTxt(currentTopic).get(Integer.parseInt(split[0] ) - 1), imagePath + split[1]);
+            images.put(pushEvents.getFromTxt(currentTopic).get(Integer.parseInt(split[0] ) - 1), imagePath + "/" + split[1]);
         }}
 
     }
