@@ -15,6 +15,15 @@ public enum Topic {
     public String path;
     public String callUpString;
 
+    public static Topic getByString(String s){
+        for (Topic topic: Topic.values()){
+            if(s.equalsIgnoreCase(topic.callUpString)){
+                return topic;
+            }
+        }
+        return null;
+    }
+
 
 
 }
