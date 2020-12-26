@@ -18,7 +18,7 @@ public abstract class ImageManager {
         return images.get(e.convertToString());
     }
 
-    public static void fillMap(){
+    static void fillMap(){
         Scanner imageConnections = null;
         Topic currentTopic = null;
         try {
