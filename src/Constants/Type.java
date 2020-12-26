@@ -21,5 +21,9 @@ public enum Type {
         callUp = s;
     }
 
+    public String getCallUp(){
+        return callUp;
+    }
+
 
 }
