@@ -5,6 +5,6 @@ public abstract class ImageManager {
     static HashMap<String, String> images = new HashMap<String, String>();
 
     public static String getImagePath(Event e){
-        return images.get()
+        return images.get(e.convertToString());
     }
 }
