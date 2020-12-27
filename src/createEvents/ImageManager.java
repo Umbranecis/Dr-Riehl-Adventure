@@ -15,7 +15,7 @@ public abstract class ImageManager {
 
     public static String getImagePath(Event e){
         fillMap();
-        return images.get(e.convertToString());
+        return images.getOrDefault(e.convertToString(), null);
     }
 
     public static void fillMap(){
