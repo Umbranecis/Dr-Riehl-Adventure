@@ -19,6 +19,17 @@ public class Event {
         solutions[2] = s3;
     }
 
+    public String convertToString() {
+        String s = "";
+        s += s + type.getCallUp();
+        s += s + getDescription();
+        for (int i = 0; i <= 2; i++) {
+            Solution tmp = solutions[i];
+            s += tmp.description + tmp.getChangeKnowledge() + tmp.getChangeSatisfaction();
+        }
+        return s;
+    }
+
     public Type getType() {
         return type;
     }
