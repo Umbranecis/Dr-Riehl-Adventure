@@ -18,7 +18,6 @@ public class Controller {
     Game game = Game.getInstance();
 
     @FXML
-    // fxml ids
     private Text question;
     @FXML
     private ImageView image;
@@ -41,7 +40,6 @@ public class Controller {
 
     public Controller(){
         timer = new ScheduledThreadPoolExecutor(1);
-        reload();
     }
 
     @FXML

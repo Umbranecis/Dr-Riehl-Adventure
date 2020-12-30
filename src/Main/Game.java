@@ -15,7 +15,7 @@ public class Game {
     private int knowledge;
 
     private Game(){
-
+        currentLesson = new Lesson(topics[0]);
     }
 
     public static Game getInstance(){
