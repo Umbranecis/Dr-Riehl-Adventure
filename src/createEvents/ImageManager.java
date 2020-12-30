@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public abstract class ImageManager {
     //Ordner der Bilder
-    static String imagePath = "images";
+    static String imagePath = "src/images";
     // Datei für die Verwaltung
     static String connectionPath = "src/images/ImageConections";
     public static HashMap<String, String> images = new HashMap<String, String>();
