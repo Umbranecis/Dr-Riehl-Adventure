@@ -6,7 +6,7 @@ import createEvents.*;
 
 import java.util.*;
 
-public class lesson {
+public class Lesson {
     private int counting;
     private Topic t;
     private String eventText;
@@ -19,7 +19,7 @@ public class lesson {
     private String imagePath;
 
     //Start-Methode
-    public lesson(Topic t) {
+    public Lesson(Topic t) {
         this.t = t;
         pullEvents(t);
         prepForGUI(counting);

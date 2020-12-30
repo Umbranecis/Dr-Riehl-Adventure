@@ -97,7 +97,7 @@ public class Controller {
     }
 
     public void reload() {
-        setQuestion(getEventText());
+        setQuestion(generateQuest());
         setAnswerA(genA());
         setAnswerB(genB());
         setAnswerC(genC());
