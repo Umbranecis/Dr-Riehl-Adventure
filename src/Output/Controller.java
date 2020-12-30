@@ -7,12 +7,15 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import Main.*;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.concurrent.*;
 
 public class Controller {
+
+    Game game = Game.getInstance();
 
     @FXML
     // fxml ids

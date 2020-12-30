@@ -7,6 +7,8 @@ import createEvents.*;
 import java.util.*;
 
 public class Lesson {
+
+
     private int counting;
     private Topic t;
     private String eventText;
@@ -18,20 +20,57 @@ public class Lesson {
     private Solution[] s;
     private String imagePath;
 
+
+
+    Event currentEvent;
+
     //Start-Methode
     public Lesson(Topic t) {
         this.t = t;
         pullEvents(t);
-        prepForGUI(counting);
+        prepForGUI();
     }
 
     //schön aussehende getter- und setter-Methoden
+
+    public Topic getT() {
+        return t;
+    }
+
+    public void setT(Topic t) {
+        this.t = t;
+    }
+
+    public Solution[] getS() {
+        return s;
+    }
+
+    public void setS(Solution[] s) {
+        this.s = s;
+    }
+
+    public Event getCurrentEvent() {
+        return currentEvent;
+    }
+
+    public void setCurrentEvent(Event currentEvent) {
+        this.currentEvent = currentEvent;
+    }
+
     public String getEventText() {
         return eventText;
     }
 
     public void setEventText(String eventText) {
         this.eventText = eventText;
+    }
+
+    public ArrayList<Event> getaLE() {
+        return aLE;
+    }
+
+    public void setaLE(ArrayList<Event> aLE) {
+        this.aLE = aLE;
     }
 
     public String getAnswerOne() {
@@ -74,22 +113,30 @@ public class Lesson {
         this.imagePath = imagePath;
     }
 
+    public int getCounting() {
+        return counting;
+    }
+
+    public void setCounting(int counting) {
+        this.counting = counting;
+    }
+
     //eigene Methoden zum selbst benutzen in der Klasse
     private void pullEvents(Topic t) {
         aLE = pushEvents.getEvents(this.t);
-        prepForGUI(0);
+        prepForGUI();
     }
 
-    private void prepForGUI(int counting) {
+    private void prepForGUI() {
 
-        Event e = aLE.get(counting);
-        setType(e.getType());
-        setEventText(e.getDescription());
-        s = e.getSolutions();
+        currentEvent = aLE.get(counting);
+        setType(currentEvent.getType());
+        setEventText(currentEvent.getDescription());
+        s = currentEvent.getSolutions();
         setAnswerOne((String) s[0].getDescription());
         setAnswerTwo((String) s[1].getDescription());
         setAnswerThree((String) s[2].getDescription());
-        setImagePath((String) ImageManager.getImagePath(e));
+        setImagePath((String) ImageManager.getImagePath(currentEvent));
         counting++;
     }
 
@@ -98,7 +145,7 @@ public class Lesson {
         int knowledge = s[a].getChangeKnowledge();
         int satisfaction = s[a].getChangeSatisfaction();
         //Punktzahl in Oberklasse erhöhen aus Werten der Antwort
-        prepForGUI(counting);
+        prepForGUI();
 
     }
 
