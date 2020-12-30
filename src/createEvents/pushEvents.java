@@ -1,6 +1,7 @@
 package createEvents;
 
-import Constants.*;
+import Constants.Topic;
+import Constants.Type;
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -1,6 +1,7 @@
 package lessons;
 
-import Constants.*;
+import Constants.Topic;
+import Constants.Type;
 import Main.Game;
 import createEvents.*;
 //import Output.*;
