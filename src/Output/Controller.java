@@ -59,8 +59,7 @@ public class Controller {
     public void clickedC(MouseEvent event) {
         System.out.println("c wurde geklicked");
         returnInt(2);
-        setImage(getImage());
-
+        timer.schedule(() -> reload(), 2,TimeUnit.SECONDS);
     }
     public void setBgColor(StackPane sP){
         sP.getStylesheets();
@@ -100,30 +99,10 @@ public class Controller {
     }
 
     public void reload() {
-        setQuestion(generateQuest());
-        setAnswerA(genA());
-        setAnswerB(genB());
-        setAnswerC(genC());
-    }
-
-    // Daten generation
-    public String generateQuest() {
-        return "Das ist eine Frage";
-    }
-    public String getImage(){
-        return "images/herrRiehlusBornLegend.jpg";
-    }
-    public String genA(){
-        return "Antwort dA as ist richtig";
-    }
-    public String genB(){
-        return "Antwort B das ist richtig";
-    }
-    public String genC(){
-        return "Antwort C das ist richtig";
-    }
-    public void right(){
-
-
+        setQuestion(game.getQuestion());
+        setAnswerA(game.getAnswer1());
+        setAnswerB(game.getAnswer2());
+        setAnswerC(game.getAnswer3());
+        setImage(game.getImage());
     }
 }

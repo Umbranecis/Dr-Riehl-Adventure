@@ -4,9 +4,7 @@ import Constants.Topic;
 import createEvents.ImageManager;
 import lessons.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 
 public class Game {
     private static final Game theGame = new Game();
@@ -33,7 +31,7 @@ public class Game {
     }
 
     private void loadNextEvent(int answer){
-        if(currentLesson.getCounting() >= currentLesson.getaLE().size() - 1){
+        if(currentLesson.getCounting() >= currentLesson.getEventArrayList().size() - 1){
             currentTopic = topics[Arrays.asList(topics).indexOf(currentTopic) + 1];
             currentLesson = new Lesson(currentTopic);
         }

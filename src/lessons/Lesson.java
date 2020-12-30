@@ -1,6 +1,7 @@
 package lessons;
 
 import Constants.*;
+import Main.Game;
 import createEvents.*;
 //import Output.*;
 
@@ -10,43 +11,41 @@ public class Lesson {
 
 
     private int counting;
-    private Topic t;
+    private Topic topic;
     private String eventText;
     private String answerOne;
     private String answerTwo;
     private String answerThree;
-    private ArrayList<Event> aLE;
+    private ArrayList<Event> eventArrayList;
     private Type type;
-    private Solution[] s;
+    private Solution[] solutions;
     private String imagePath;
-
-
-
-    Event currentEvent;
+    private Event currentEvent;
 
     //Start-Methode
-    public Lesson(Topic t) {
-        this.t = t;
-        pullEvents(t);
+    public Lesson(Topic topic) {
+        counting = 0;
+        this.topic = topic;
+        pullEvents(topic);
         prepForGUI();
     }
 
     //schön aussehende getter- und setter-Methoden
 
-    public Topic getT() {
-        return t;
+    public Topic getTopic() {
+        return topic;
     }
 
-    public void setT(Topic t) {
-        this.t = t;
+    public void setTopic(Topic topic) {
+        this.topic = topic;
     }
 
-    public Solution[] getS() {
-        return s;
+    public Solution[] getSolutions() {
+        return solutions;
     }
 
-    public void setS(Solution[] s) {
-        this.s = s;
+    public void setSolutions(Solution[] solutions) {
+        this.solutions = solutions;
     }
 
     public Event getCurrentEvent() {
@@ -65,12 +64,12 @@ public class Lesson {
         this.eventText = eventText;
     }
 
-    public ArrayList<Event> getaLE() {
-        return aLE;
+    public ArrayList<Event> getEventArrayList() {
+        return eventArrayList;
     }
 
-    public void setaLE(ArrayList<Event> aLE) {
-        this.aLE = aLE;
+    public void setEventArrayList(ArrayList<Event> eventArrayList) {
+        this.eventArrayList = eventArrayList;
     }
 
     public String getAnswerOne() {
@@ -123,28 +122,31 @@ public class Lesson {
 
     //eigene Methoden zum selbst benutzen in der Klasse
     private void pullEvents(Topic t) {
-        aLE = pushEvents.getEvents(this.t);
+        eventArrayList = pushEvents.getEvents(this.topic);
         prepForGUI();
     }
 
     private void prepForGUI() {
-
-        currentEvent = aLE.get(counting);
+        currentEvent = eventArrayList.get(counting);
         setType(currentEvent.getType());
         setEventText(currentEvent.getDescription());
-        s = currentEvent.getSolutions();
-        setAnswerOne((String) s[0].getDescription());
-        setAnswerTwo((String) s[1].getDescription());
-        setAnswerThree((String) s[2].getDescription());
+        solutions = currentEvent.getSolutions();
+        setAnswerOne((String) solutions[0].getDescription());
+        setAnswerTwo((String) solutions[1].getDescription());
+        setAnswerThree((String) solutions[2].getDescription());
         setImagePath((String) ImageManager.getImagePath(currentEvent));
         counting++;
     }
 
     public void buttonPressed(int a) {
 
-        int knowledge = s[a].getChangeKnowledge();
-        int satisfaction = s[a].getChangeSatisfaction();
+        int knowledge = solutions[a].getChangeKnowledge();
+        int satisfaction = solutions[a].getChangeSatisfaction();
+
+
         //Punktzahl in Oberklasse erhöhen aus Werten der Antwort
+        Game.getInstance().changeKnowledge(knowledge);
+        Game.getInstance().changeSatisfaction(satisfaction);
         prepForGUI();
 
     }
