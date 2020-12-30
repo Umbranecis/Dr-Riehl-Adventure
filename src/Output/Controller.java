@@ -41,6 +41,7 @@ public class Controller {
 
     public Controller(){
         timer = new ScheduledThreadPoolExecutor(1);
+        reload();
     }
 
     @FXML
