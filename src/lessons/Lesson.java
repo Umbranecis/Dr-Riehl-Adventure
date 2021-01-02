@@ -136,20 +136,23 @@ public class Lesson {
         setAnswerTwo((String) solutions[1].getDescription());
         setAnswerThree((String) solutions[2].getDescription());
         setImagePath((String) ImageManager.getImagePath(currentEvent));
-        counting++;
     }
 
-    public void buttonPressed(int a) {
+    public void getAnswers(int a) {
 
         int knowledge = solutions[a].getChangeKnowledge();
         int satisfaction = solutions[a].getChangeSatisfaction();
 
-
         //Punktzahl in Oberklasse erhöhen aus Werten der Antwort
         Game.getInstance().changeKnowledge(knowledge);
         Game.getInstance().changeSatisfaction(satisfaction);
-        prepForGUI();
 
+
+
+    }
+    public void reload(){
+        counting++;
+        prepForGUI();
     }
 
 }

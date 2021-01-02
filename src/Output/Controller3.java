@@ -2,6 +2,7 @@ package Output;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
+import static Main.Game.getInstance;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -36,9 +37,9 @@ public class Controller3 {
         timer.schedule(() -> reload(),100 , TimeUnit.MILLISECONDS);
     }
     public void reload(){
-        setAverage(1);
-        setComprehansion(1);
-        setSatisfaction(1);
+        setAverage(getInstance().getEndGrade());
+        setComprehansion(getInstance().getKnowledge());
+        setSatisfaction(getInstance().getSatisfaction());
     }
 
 }

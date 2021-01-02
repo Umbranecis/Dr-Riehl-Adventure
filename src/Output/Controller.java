@@ -11,6 +11,7 @@ import Main.*;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.concurrent.*;
 
 public class Controller {
@@ -47,19 +48,19 @@ public class Controller {
     public void clickedA(MouseEvent event) {
         System.out.println("a wurde geklicked");
         returnInt(0);
-        timer.schedule(() -> reload(), 1,TimeUnit.SECONDS);
+        reload();
     }
     @FXML
     public void clickedB(MouseEvent event) {
         System.out.println("b wurde geklicked");
         returnInt(1);
-        timer.schedule(() -> reload(), 1,TimeUnit.SECONDS);
+        reload();
     }
     @FXML
     public void clickedC(MouseEvent event) {
         System.out.println("c wurde geklicked");
         returnInt(2);
-        timer.schedule(() -> reload(), 1,TimeUnit.SECONDS);
+        reload();
     }
     public void setBgColor(StackPane sP){
         sP.getStylesheets();
@@ -67,6 +68,7 @@ public class Controller {
     }
 
     public int returnInt(int i) {
+        Game.getInstance().update(i);
         return i;
     }
 
@@ -96,9 +98,15 @@ public class Controller {
         }
         Image i = new Image(input);
         image.setImage(i);
+        try {
+            input.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
     public void load(){
-        timer.schedule(() -> reload(),100 ,TimeUnit.MILLISECONDS);
+        timer.schedule(() -> reload(),1000 ,TimeUnit.MILLISECONDS);
     }
 
     public void reload() {

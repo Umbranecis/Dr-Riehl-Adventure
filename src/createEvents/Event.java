@@ -4,9 +4,6 @@ import Constants.Type;
 
 public class Event {
     Type type;
-
-
-
     String description;
     Solution[] solutions;
 
@@ -21,11 +18,11 @@ public class Event {
 
     public String convertToString() {
         String s = "";
-        s += s + type.getCallUp();
-        s += s + getDescription();
+        s = type.getCallUp() + ":";
+        s += getDescription();
         for (int i = 0; i <= 2; i++) {
             Solution tmp = solutions[i];
-            s += tmp.description + tmp.getChangeKnowledge() + tmp.getChangeSatisfaction();
+            s +=  ":" + tmp.description + "!" + tmp.getChangeKnowledge() + "!" + tmp.getChangeSatisfaction();
         }
         return s;
     }
