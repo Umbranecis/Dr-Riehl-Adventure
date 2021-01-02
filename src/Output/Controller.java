@@ -40,25 +40,26 @@ public class Controller {
 
     public Controller(){
         timer = new ScheduledThreadPoolExecutor(1);
+        load();
     }
 
     @FXML
     public void clickedA(MouseEvent event) {
         System.out.println("a wurde geklicked");
         returnInt(0);
-        timer.schedule(() -> reload(), 2,TimeUnit.SECONDS);
+        timer.schedule(() -> reload(), 1,TimeUnit.SECONDS);
     }
     @FXML
     public void clickedB(MouseEvent event) {
         System.out.println("b wurde geklicked");
         returnInt(1);
-        timer.schedule(() -> reload(), 2,TimeUnit.SECONDS);
+        timer.schedule(() -> reload(), 1,TimeUnit.SECONDS);
     }
     @FXML
     public void clickedC(MouseEvent event) {
         System.out.println("c wurde geklicked");
         returnInt(2);
-        timer.schedule(() -> reload(), 2,TimeUnit.SECONDS);
+        timer.schedule(() -> reload(), 1,TimeUnit.SECONDS);
     }
     public void setBgColor(StackPane sP){
         sP.getStylesheets();
@@ -96,6 +97,9 @@ public class Controller {
         Image i = new Image(input);
         image.setImage(i);
     }
+    public void load(){
+        timer.schedule(() -> reload(),100 ,TimeUnit.MILLISECONDS);
+    }
 
     public void reload() {
         setQuestion(game.getQuestion());
@@ -104,4 +108,5 @@ public class Controller {
         setAnswerC(game.getAnswer3());
         setImage(game.getImage());
     }
+
 }

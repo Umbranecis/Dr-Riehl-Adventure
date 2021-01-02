@@ -4,16 +4,23 @@
 
 #bgA, #bgB, #bgC{
     -fx-background-color: #313335;
-    border-color: black;
-    border-width: 2px;
-    border-radius: 2px;
+    -fx-border-color: rgb(209, 146, 57, 0.6);
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
 }
 
 #bgA:hover, #bgB:hover, #bgC:hover{
     -fx-background-color: #3C3F41;
+    -fx-background-color: rgb(209, 146, 57, 0.3);
+    -fx-border-color: #D19239;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
 
 }
 
 #question, #answerA, #answerB, #answerC{
-     -fx-fill: #9B9B9C;
+    -fx-fill: #9B9B9C;
 }
+

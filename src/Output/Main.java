@@ -11,11 +11,11 @@ import static Output.Visuals.lessons;
 
 public class Main extends Application {
 
-    Stage mainStage = new Stage();
+    static Stage mainStage = new Stage();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        setMainStage(Visuals.start());
+        setMainStage(Visuals.startGUI());
         mainStage.show();
     }
 
@@ -25,7 +25,7 @@ public class Main extends Application {
     }
 
 
-    public void setMainStage(Scene scene) {
+    public static void setMainStage(Scene scene) {
         mainStage.setScene(scene);
     }
 

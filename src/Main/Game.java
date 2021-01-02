@@ -1,6 +1,8 @@
 package Main;
 
 import Constants.Topic;
+import Output.Main;
+import Output.Visuals;
 import createEvents.ImageManager;
 import lessons.*;
 
@@ -32,6 +34,9 @@ public class Game {
 
     private void loadNextEvent(int answer){
         if(currentLesson.getCounting() >= currentLesson.getEventArrayList().size() - 1){
+            if(Arrays.asList(topics).indexOf(currentTopic) >= topics.length){
+                Main.setMainStage(Visuals.endGUI());
+            }
             currentTopic = topics[Arrays.asList(topics).indexOf(currentTopic) + 1];
             currentLesson = new Lesson(currentTopic);
         }
