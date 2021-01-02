@@ -21,13 +21,13 @@ public abstract class Visuals {
     }
 
     public static Scene startGUI(){
-        Parent root = null;
+        Scene s = null;
         try {
-            root = FXMLLoader.load(Main.class.getResource("startMeister.fxml"));
+            s = new Scene(FXMLLoader.load(Main.class.getResource("startMeister.fxml")), 700, 900);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Scene s = new Scene(root, 700, 900);
+        //Scene s = new Scene(root, 700, 900);
         s.getStylesheets().add(Main.class.getResource("style2.css").toExternalForm());
         return s;
     }
