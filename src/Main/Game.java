@@ -111,7 +111,7 @@ public class Game {
     public int getEndGrade(){
         int x = (knowledge * satisfaction + 2) / 4;
         int value = (int) (15 * (x/ Math.sqrt( x * x + 1)));
-        if (value >= 0){return value;}
+        if (x >= 0){return value;}
         else {return 0;}
     }
 
