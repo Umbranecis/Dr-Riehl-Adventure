@@ -66,6 +66,7 @@ public class Controller {
 
     @FXML
     public void machenWirSchluss(ActionEvent actionEvent) {
+        game.macheMaSchluss();
         reload();
     }
     public void setBgColor(StackPane sP){

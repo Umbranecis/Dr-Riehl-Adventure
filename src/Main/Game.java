@@ -41,21 +41,15 @@ public class Game {
 
     private void loadNextEvent(int answer) {
         currentLesson.getAnswers(answer);
-        if (!(currentLesson.getCounting() == currentLesson.getEventArrayList().size() - 1)) {
+        if (lessonFinished()) {
+            endLesson();
+        }
+        else {
             currentLesson.reload();
             return;
         }
 
 
-        int position = getPosition(currentTopic);
-        if (!(position + 1 == Topic.getAmount())){
-            endLesson();
-            return;
-        }
-
-
-        Main.setMainStage(Visuals.endGUI());
-        return;
     }
 
     public void macheMaSchluss(){
@@ -65,9 +59,29 @@ public class Game {
 
 
     public void endLesson(){
-        currentTopic = Topic.getByInt(getPosition(currentTopic) + 1);
-        currentLesson = new Lesson(currentTopic);
+        if (topicsRemaining()){
+            currentTopic = Topic.getByInt(getPosition(currentTopic) + 1);
+            currentLesson = new Lesson(currentTopic);
+            return;
+        }
+
+
+        Main.setMainStage(Visuals.endGUI());
+        return;
+
+
     }
+
+    boolean lessonFinished(){
+        return currentLesson.getCounting() == currentLesson.getEventArrayList().size() - 1;
+    }
+
+    boolean topicsRemaining(){
+        return getPosition(currentTopic) < Topic.getAmount() - 1;
+    }
+
+
+
 
 
 
