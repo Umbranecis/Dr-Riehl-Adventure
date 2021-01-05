@@ -1,5 +1,6 @@
 package Output;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -62,6 +63,11 @@ public class Controller {
         returnInt(2);
         reload();
     }
+
+    @FXML
+    public void machenWirSchluss(ActionEvent actionEvent) {
+        reload();
+    }
     public void setBgColor(StackPane sP){
         sP.getStylesheets();
 
@@ -105,6 +111,7 @@ public class Controller {
         }
     }
 
+
     public void load(){
         timer.schedule(() -> reload(),1000 ,TimeUnit.MILLISECONDS);
     }
@@ -116,5 +123,7 @@ public class Controller {
         setAnswerC(game.getAnswer3());
         setImage(game.getImage());
     }
+
+
 
 }
