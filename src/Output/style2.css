@@ -3,7 +3,7 @@
 -fx-background: linear-gradient( #2B2B2B, #3C3F41, #9B9B9C);
 
 }
-#button{
+#button, #endMeister{
     -fx-text-fill: #2B2B2B;
     -fx-background-color: rgb(209, 146, 57, 0.5);
     -fx-border-color: #D19239;
@@ -11,6 +11,16 @@
     -fx-border-radius: 10px;
     -fx-background-radius: 10px;
 }
-#button:hover{
+#button:hover, #endMeister:hover{
 -fx-background-color: #D19239;
+}
+
+#average, #satisfaction, #comprehansion{
+     -fx-fill: #9B9B9C;
+}
+#line{
+-fx-fill: #9B9B9C;
+}
+#lable0, #lable1, #lable2, #lable3{
+ -fx-text-fill: #9B9B9C;
 }
