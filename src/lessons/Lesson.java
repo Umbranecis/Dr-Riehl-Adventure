@@ -155,4 +155,12 @@ public class Lesson {
         prepForGUI();
     }
 
+    public int length(){
+        return getEventArrayList().size();
+    }
+
+    public int currentIndex(){
+        return counting;
+    }
+
 }

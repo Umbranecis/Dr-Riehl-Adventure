@@ -15,23 +15,6 @@ public class Game {
     private static final Game theGame = new Game();
     private Lesson currentLesson;
     private Topic currentTopic;
-
-    public int getSatisfaction() {
-        return satisfaction;
-    }
-
-    public void setSatisfaction(int satisfaction) {
-        this.satisfaction = satisfaction;
-    }
-
-    public int getKnowledge() {
-        return knowledge;
-    }
-
-    public void setKnowledge(int knowledge) {
-        this.knowledge = knowledge;
-    }
-
     private int satisfaction;
     private int knowledge;
 
@@ -44,8 +27,12 @@ public class Game {
         return theGame;
     }
 
+    public int knowledgeFormula(int i){
+        return i* (1+ satisfaction/2);
+    }
+
     public void changeKnowledge(int i) {
-        knowledge += i;
+        knowledge += knowledgeFormula(i);
     }
 
     public void changeSatisfaction(int i) {
@@ -62,14 +49,24 @@ public class Game {
 
         int position = getPosition(currentTopic);
         if (!(position + 1 == Topic.getAmount())){
-            currentTopic = Topic.getByInt(position + 1);
-            currentLesson = new Lesson(currentTopic);
+            endLesson();
             return;
         }
 
 
         Main.setMainStage(Visuals.endGUI());
         return;
+    }
+
+    public void macheMaSchluss(){
+        changeSatisfaction((currentLesson.length() - currentLesson.currentIndex()) * 2);
+        endLesson();
+    }
+
+
+    public void endLesson(){
+        currentTopic = Topic.getByInt(getPosition(currentTopic) + 1);
+        currentLesson = new Lesson(currentTopic);
     }
 
 
@@ -114,6 +111,26 @@ public class Game {
         if (x >= 0){return value;}
         else {return 0;}
     }
+
+
+
+    public int getSatisfaction() {
+        return satisfaction;
+    }
+
+    public void setSatisfaction(int satisfaction) {
+        this.satisfaction = satisfaction;
+    }
+
+    public int getKnowledge() {
+        return knowledge;
+    }
+
+    public void setKnowledge(int knowledge) {
+        this.knowledge = knowledge;
+    }
+
+
 
 
 
