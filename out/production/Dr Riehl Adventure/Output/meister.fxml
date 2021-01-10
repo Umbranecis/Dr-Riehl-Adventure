@@ -10,6 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.Button?>
 <AnchorPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Output.Controller">
    <children>
       <AnchorPane prefHeight="900.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -79,9 +80,18 @@
                         </StackPane>
                      </children>
                      <VBox.margin>
-                        <Insets />
+                        <Insets bottom="20.0" />
                      </VBox.margin>
                   </HBox>
+                  <VBox alignment="CENTER" layoutX="195.0" layoutY="902.0" prefHeight="51.0" prefWidth="315.0" AnchorPane.leftAnchor="195.0" AnchorPane.rightAnchor="190.0">
+                     <children>
+                        <Button fx:id="schluss" alignment="CENTER" mnemonicParsing="false" onAction="#machenWirSchluss" prefHeight="53.0" prefWidth="315.0" text="Machen wir Schluss für heute!">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
                </children>
             </VBox>
          </children>
