@@ -25,7 +25,7 @@ public abstract class pushEvents {
         String description = split[1];
         ArrayList<Solution> solutions = new ArrayList<Solution>();
         for (int i = 2; i <= 4; i++) {
-            String tmp = split[i - 1];
+            String tmp = split[i];
             String[] solution = tmp.split("!");
             solutions.add(new Solution(solution[0], solution[1], solution[2]));
         }
