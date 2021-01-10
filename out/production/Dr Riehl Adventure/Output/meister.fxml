@@ -22,7 +22,7 @@
             </ImageView>
             <VBox layoutX="50.0" layoutY="118.0" prefHeight="68.0" prefWidth="600.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="118.0">
                <children>
-                  <Text fx:id="question" boundsType="LOGICAL_VERTICAL_CENTER" strokeType="OUTSIDE" strokeWidth="0.0" text="Sind 2 Kühe im Keller und hacken Heizöl, kommt ein Schraubenzieher die eine Tür rein,antwortet die darauf:ja, der grüßt nie." textOrigin="CENTER" wrappingWidth="597.703369140625">
+                  <Text fx:id="question" boundsType="LOGICAL_VERTICAL_CENTER" strokeType="OUTSIDE" strokeWidth="0.0" text="" textOrigin="CENTER" wrappingWidth="597.703369140625">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -40,7 +40,7 @@
                      <children>
                         <StackPane fx:id="bgA1" prefHeight="70.0" prefWidth="571.0">
                            <children>
-                              <Text fx:id="answerA" strokeType="OUTSIDE" strokeWidth="0.0" text="Antwort 1" wrappingWidth="567.0967712402344">
+                              <Text fx:id="answerA" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="567.0967712402344">
                                  <StackPane.margin>
                                     <Insets left="20.0" />
                                  </StackPane.margin>
@@ -56,7 +56,7 @@
                      <children>
                         <StackPane prefHeight="70.0" prefWidth="568.0">
                            <children>
-                              <Text fx:id="answerB" strokeType="OUTSIDE" strokeWidth="0.0" text="Antwort 2" wrappingWidth="571.9935607910156">
+                              <Text fx:id="answerB" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="571.9935607910156">
                                  <StackPane.margin>
                                     <Insets left="20.0" />
                                  </StackPane.margin>
@@ -72,7 +72,7 @@
                      <children>
                         <StackPane prefHeight="70.0" prefWidth="559.0">
                            <children>
-                              <Text fx:id="answerC" strokeType="OUTSIDE" strokeWidth="0.0" text="Antwort 3" wrappingWidth="571.2027893066406" />
+                              <Text fx:id="answerC" strokeType="OUTSIDE" strokeWidth="0.0" text="" wrappingWidth="571.2027893066406" />
                            </children>
                            <HBox.margin>
                               <Insets left="20.0" />
