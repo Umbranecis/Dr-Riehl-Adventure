@@ -15,7 +15,7 @@ public abstract class ImageManager {
 
     public static String getImagePath(Event e){
         fillMap();
-        return images.getOrDefault(e.convertToString(), imagePath + "/herrRiehlusBornLegend.png");
+        return images.getOrDefault(e.convertToString(), imagePath + "/meisterRiehlOnTheLose.png");
     }
 
     public static void fillMap(){
